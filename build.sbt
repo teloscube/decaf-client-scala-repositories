@@ -2,12 +2,12 @@
 val VersionCats              = "1.2.0"
 val VersionCatsEffect        = "1.0.0-RC3"
 val VersionCirce             = "0.9.3"
-val VersionBaristaClientCore = "0.0.1-SNAPSHOT"
 
 
 // Configure the root project:
 lazy val root = (project in file("."))
   .enablePlugins(BuildInfoPlugin)
+  .dependsOn(RootProject(uri("https://github.com/teloscube/decaf-client-scala.git#0.0.1")))
   .settings(
     // Top-level Settings:
     name := "barista-client-repositories",
@@ -26,7 +26,6 @@ lazy val root = (project in file("."))
     libraryDependencies ++= Seq(
       "org.typelevel"   %% "cats-core"           % VersionCats,
       "org.typelevel"   %% "cats-effect"         % VersionCatsEffect,
-      "com.vsthost.rnd" %% "barista-client-core" % VersionBaristaClientCore,
       "io.circe"        %% "circe-core"          % VersionCirce,
       "io.circe"        %% "circe-generic"       % VersionCirce,
     )
