@@ -13,14 +13,16 @@ lazy val root = (project in file("."))
     organization := "com.decafhub",
     scalaVersion := "2.12.15",
     version := "0.0.2-SNAPSHOT",
-
     // Scalac Options:
     scalacOptions += "-deprecation",
-
     // BuildInfo Settings:
-    buildInfoKeys := Seq[BuildInfoKey](name, version, scalaVersion, sbtVersion),
+    buildInfoKeys := Seq[BuildInfoKey](
+      name,
+      version,
+      scalaVersion,
+      sbtVersion,
+    ),
     buildInfoPackage := "com.decafhub.decaf.client.repositories.buildinfo",
-
     // Libraries:
     libraryDependencies ++= Seq(
       "org.typelevel" %% "cats-core"          % VersionCats,
@@ -28,5 +30,5 @@ lazy val root = (project in file("."))
       "io.circe"      %% "circe-core"         % VersionCirce,
       "io.circe"      %% "circe-generic"      % VersionCirce,
       "com.decafhub"  %% "decaf-client-scala" % VersionDecafClient,
-    )
+    ),
   )

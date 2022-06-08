@@ -7,11 +7,14 @@ import io.circe.generic.auto._
 
 import scala.language.higherKinds
 
-
-/**
-  * Provides a remote API repository for [[Portfolio]]s.
+/** Provides a remote API repository for [[Portfolio]]s.
   *
   * @param api The API algebra to be used to work on records.
   * @tparam F Context type parameter.
   */
-class PortfolioRepository[F[_]](api: BaristaClient[F]) extends Repository[F, Int, Portfolio](api, "portfolios")
+class PortfolioRepository[F[_]](
+    api: BaristaClient[F],
+) extends Repository[F, Int, Portfolio](
+      api,
+      "portfolios",
+    )
