@@ -9,7 +9,7 @@ lazy val root = (project in file("."))
   .enablePlugins(BuildInfoPlugin)
   .settings(
     name := "decaf-client-scala-repositories",
-    version := "0.0.2",
+    version := "0.0.3-SNAPSHOT",
     description := "DECAF API Scala Client Extensions for Record Repositories.",
     homepage := Some(
       url(
